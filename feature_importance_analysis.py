@@ -5,6 +5,18 @@ from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.tree import DecisionTreeClassifier
 
+#这个新脚本专门用于分析决策树模型中特征的重要性，包含以下主要功能：
+#特征提取和预处理：
+#使用CountVectorizer提取文本特征
+#限制为前50个最频繁的词，以保持可视化的清晰度
+#特征重要性分析：
+#使用决策树模型的feature_importances_属性获取特征重要性
+#生成特征重要性排名
+#可视化展示前20个最重要的特征
+#特征分布分析：
+#分析重要特征在垃圾短信和正常短信中的出现频率
+#通过对比图展示特征的区分能力
+
 def load_and_preprocess_data(file_path):
     # 读取数据
     df = pd.read_csv(file_path, sep='\t', names=['label', 'message'])
