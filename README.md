@@ -187,16 +187,62 @@ plt.plot(thresholds, recalls, label='Recall')
 
 ## 项目结构
 
-```
-├── SMSSpamCollection.txt    # 原始数据集
-├── requirements.txt         # 项目依赖
-├── sms_spam_classifier.py   # 主分类器实现
-├── sms_data_analysis.py     # 数据分析脚本
-├── confusion_matrix_analysis.py  # 混淆矩阵分析
-├── feature_importance_analysis.py # 特征重要性分析
-├── model_performance_visualization.py # 性能可视化
-└── roc_analysis.py         # ROC曲线分析
-```
+项目文件组织如下：
+
+1. 数据文件
+   ├── SMSSpamCollection.txt    # 原始数据集
+   └── datareadme.md           # 数据集说明文档
+
+2. 依赖管理
+   └── requirements.txt        # 项目依赖（numpy, pandas, scikit-learn, matplotlib, seaborn等）
+
+3. 核心代码文件
+   ├── sms_spam_classifier.py   # 主要的分类器实现
+   ├── sms_data_analysis.py     # 数据分析脚本
+   ├── feature_importance_analysis.py  # 特征重要性分析
+   ├── confusion_matrix_analysis.py    # 混淆矩阵分析
+   ├── model_performance_visualization.py  # 模型性能可视化
+   └── roc_analysis.py          # ROC曲线分析
+
+4. 可视化结果
+   ├── word_frequency.png       # 词频分析结果
+   ├── message_length_distribution.png  # 消息长度分布
+   ├── label_distribution.png   # 标签分布
+   ├── feature_importance.png   # 特征重要性
+   ├── confusion_matrices.png   # 混淆矩阵
+   ├── roc_curves.png          # ROC曲线
+   └── precision_recall_threshold.png   # 精确率-召回率阈值曲线
+
+5. 文档
+   ├── README.md               # 项目说明文档
+   └── result.md              # 结果分析文档
+
+### 文件说明
+
+#### 数据文件
+- `SMSSpamCollection.txt`：包含5,572条标记过的短信数据
+- `datareadme.md`：详细说明数据集的来源、格式和特点
+
+#### 核心代码文件
+- `sms_spam_classifier.py`：实现了主要的分类算法（朴素贝叶斯、决策树、K-NN）
+- `sms_data_analysis.py`：进行数据探索性分析，包括文本长度、词频等统计
+- `feature_importance_analysis.py`：分析和可视化特征重要性
+- `confusion_matrix_analysis.py`：生成和分析混淆矩阵
+- `model_performance_visualization.py`：创建模型性能的可视化图表
+- `roc_analysis.py`：计算和绘制ROC曲线
+
+#### 可视化结果
+- `word_frequency.png`：展示垃圾短信和正常短信中最常见的词语
+- `message_length_distribution.png`：显示不同类别短信的长度分布
+- `label_distribution.png`：展示数据集中的类别分布
+- `feature_importance.png`：展示不同特征对分类的重要性
+- `confusion_matrices.png`：展示各个模型的混淆矩阵
+- `roc_curves.png`：展示各个模型的ROC曲线
+- `precision_recall_threshold.png`：展示不同阈值下的精确率和召回率
+
+#### 文档文件
+- `README.md`：项目的主要文档，包含项目说明、环境配置、实现细节等
+- `result.md`：详细的实验结果分析和模型性能比较
 
 ## 实现的算法
 
